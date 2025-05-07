@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/index";
 import TodoTable from "../components/TodoTable";
 import NotesTable from "../components/NotesTable";
 import { Box, Container, Typography } from "@mui/material";

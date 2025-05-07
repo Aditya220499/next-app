@@ -1,4 +1,9 @@
-export const notes = [
+export interface Note {
+    id: string;
+    title: string;
+    content: string;
+  }
+export const notes : Note[] = [
     {
       id: "1",
       title: "Meeting Notes",
