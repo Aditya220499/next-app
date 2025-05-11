@@ -1,92 +1,370 @@
-export interface Note {
-    id: string;
-    title: string;
-    content: string;
-  }
-export const notes : Note[] = [
-    {
-      id: "1",
-      title: "Meeting Notes",
-      content: "Discussed project goals and deadlines."
-    },
-    {
-      id: "2",
-      title: "Design Ideas",
-      content: "Use a sidebar layout, add dark mode toggle."
-    },
-    {
-      id: "3",
-      title: "Bug Fixes",
-      content: "Fixed authentication issue in login flow. Updated error handling."
-    },
-    {
-      id: "4",
-      title: "API Documentation",
-      content: "Added Swagger documentation for new endpoints. Updated README."
-    },
-    {
-      id: "5",
-      title: "Performance Updates",
-      content: "Implemented lazy loading for images. Reduced bundle size by 30%."
-    },
-    {
-      id: "6",
-      title: "Team Feedback",
-      content: "Code review suggestions: improve error handling, add more comments."
-    },
-    {
-      id: "7",
-      title: "Feature Planning",
-      content: "New dashboard features: analytics charts, export functionality."
-    },
-    {
-      id: "8",
-      title: "Security Review",
-      content: "Completed security audit. Need to update dependencies."
-    },
-    {
-      id: "9",
-      title: "UI Components",
-      content: "Created reusable button and form components. Added storybook entries."
-    },
-    {
-      id: "10",
-      title: "Database Schema",
-      content: "Updated user table with new fields for profile customization."
-    },
-    {
-      id: "11",
-      title: "Testing Strategy",
-      content: "Implementing E2E tests with Cypress. Coverage goal: 80%."
-    },
-    {
-      id: "12",
-      title: "Deployment Notes",
-      content: "Set up CI/CD pipeline with GitHub Actions. Added staging environment."
-    },
-    {
-      id: "13",
-      title: "User Feedback",
-      content: "Mobile responsiveness issues reported. Priority: High."
-    },
-    {
-      id: "14",
-      title: "Architecture Decision",
-      content: "Moving to microservices architecture. Phase 1 planning complete."
-    },
-    {
-      id: "15",
-      title: "Sprint Planning",
-      content: "Q2 objectives: performance optimization, mobile app development."
-    },
-    {
-      id: "16",
-      title: "Code Refactoring",
-      content: "Converting class components to functional components with hooks."
-    },
-    {
-      id: "17",
-      title: "Accessibility Audit",
-      content: "Implementing ARIA labels and keyboard navigation improvements."
-    }
+// 
+export const notes = [
+    
+        {
+          "id": 1,
+          "title": "Buy groceries",
+          "content": "Milk, Bread, Eggs, Coffee",
+          "category": "Personal",
+          "priority": "High",
+          "status": "Active",
+          "reminder_at": "2025-05-10T10:00:00Z",
+          "created_at": "2025-05-08T08:00:00Z",
+          "updated_at": "2025-05-08T08:00:00Z",
+          "tags": ["shopping", "errands"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 2,
+          "title": "Project planning",
+          "content": "Finalize backend architecture and assign tasks.",
+          "category": "Work",
+          "priority": "Medium",
+          "status": "Active",
+          "reminder_at": null,
+          "created_at": "2025-05-07T09:30:00Z",
+          "updated_at": "2025-05-07T10:00:00Z",
+          "tags": ["project", "team"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 3,
+          "title": "Read book",
+          "content": "Continue reading 'Atomic Habits'",
+          "category": "Personal",
+          "priority": "Low",
+          "status": "Active",
+          "reminder_at": null,
+          "created_at": "2025-05-06T12:00:00Z",
+          "updated_at": "2025-05-06T12:00:00Z",
+          "tags": ["reading"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 4,
+          "title": "Client meeting summary",
+          "content": "Discussed new UI feedback and API improvements.",
+          "category": "Work",
+          "priority": "High",
+          "status": "Completed",
+          "reminder_at": null,
+          "created_at": "2025-05-05T16:00:00Z",
+          "updated_at": "2025-05-05T17:00:00Z",
+          "tags": ["meeting", "client"],
+          "attachments": ["https://example.com/summary.pdf"],
+          "is_favorite": true
+        },
+        {
+          "id": 5,
+          "title": "Weekend trip ideas",
+          "content": "Explore nearby hills or a beach destination.",
+          "category": "Personal",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-03T14:00:00Z",
+          "updated_at": "2025-05-03T14:00:00Z",
+          "tags": ["travel", "plans"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 6,
+          "title": "Fix UI bugs",
+          "content": "Check mobile responsiveness and dark mode issues.",
+          "category": "Work",
+          "priority": "High",
+          "status": "active",
+          "reminder_at": "2025-05-08T17:00:00Z",
+          "created_at": "2025-05-06T10:00:00Z",
+          "updated_at": "2025-05-06T10:30:00Z",
+          "tags": ["bugs", "UI"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 7,
+          "title": "Laundry",
+          "content": "Wash clothes and bedsheets.",
+          "category": "Personal",
+          "priority": "Low",
+          "status": "completed",
+          "reminder_at": null,
+          "created_at": "2025-05-01T09:00:00Z",
+          "updated_at": "2025-05-01T11:00:00Z",
+          "tags": [],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 8,
+          "title": "New app idea",
+          "content": "Voice-activated grocery list app for smart kitchens.",
+          "category": "Ideas",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-04-30T10:15:00Z",
+          "updated_at": "2025-04-30T10:15:00Z",
+          "tags": ["app", "idea", "tech"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 9,
+          "title": "Doctor appointment",
+          "content": "Annual health check-up at 5 PM.",
+          "category": "Health",
+          "priority": "High",
+          "status": "active",
+          "reminder_at": "2025-05-09T16:00:00Z",
+          "created_at": "2025-05-07T08:00:00Z",
+          "updated_at": "2025-05-07T08:00:00Z",
+          "tags": ["health"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 10,
+          "title": "Blog topics",
+          "content": "Write on 'JS Tips', 'Caching Strategies', and 'Design Patterns'.",
+          "category": "Writing",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-04-28T15:00:00Z",
+          "updated_at": "2025-04-28T15:00:00Z",
+          "tags": ["writing", "tech"],
+          "attachments": [],
+          "is_favorite": true
+        },
+      
+        {
+          "id": 11,
+          "title": "Daily journal",
+          "content": "Felt productive today. Finished half the sprint tasks.",
+          "category": "Journal",
+          "priority": "Low",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-07T21:00:00Z",
+          "updated_at": "2025-05-07T21:00:00Z",
+          "tags": ["journal", "daily"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 12,
+          "title": "Design inspiration",
+          "content": "Look at Pinterest for card layout ideas.",
+          "category": "Design",
+          "priority": "Low",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-02T10:00:00Z",
+          "updated_at": "2025-05-02T10:00:00Z",
+          "tags": ["design", "uiux"],
+          "attachments": ["https://example.com/mockup.png"],
+          "is_favorite": false
+        },
+        {
+          "id": 13,
+          "title": "Backup files",
+          "content": "Take a backup of all project folders and databases.",
+          "category": "Work",
+          "priority": "High",
+          "status": "completed",
+          "reminder_at": null,
+          "created_at": "2025-05-01T09:00:00Z",
+          "updated_at": "2025-05-01T10:00:00Z",
+          "tags": ["backup"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 14,
+          "title": "Study GraphQL",
+          "content": "Learn basics of queries, mutations, and schema design.",
+          "category": "Learning",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-06T13:00:00Z",
+          "updated_at": "2025-05-06T13:00:00Z",
+          "tags": ["graphql", "study"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 15,
+          "title": "Gift ideas for mom",
+          "content": "Spa voucher, books, or a photo frame.",
+          "category": "Personal",
+          "priority": "Low",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-05T08:00:00Z",
+          "updated_at": "2025-05-05T08:00:00Z",
+          "tags": ["gifts"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 16,
+          "title": "Car service",
+          "content": "Oil change, wheel alignment, and brake check.",
+          "category": "Errands",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": "2025-05-11T09:00:00Z",
+          "created_at": "2025-05-07T07:00:00Z",
+          "updated_at": "2025-05-07T07:00:00Z",
+          "tags": ["car"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 17,
+          "title": "Groceries list",
+          "content": "Tomatoes, onions, potatoes, apples, bananas.",
+          "category": "Personal",
+          "priority": "Low",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-07T11:00:00Z",
+          "updated_at": "2025-05-07T11:00:00Z",
+          "tags": ["shopping"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 18,
+          "title": "Zoom call with mentor",
+          "content": "Discuss career planning and backend roadmap.",
+          "category": "Career",
+          "priority": "High",
+          "status": "active",
+          "reminder_at": "2025-05-10T18:30:00Z",
+          "created_at": "2025-05-06T15:00:00Z",
+          "updated_at": "2025-05-06T15:00:00Z",
+          "tags": ["mentorship"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 19,
+          "title": "Check system logs",
+          "content": "Check nginx, DB, and app logs for 500 errors.",
+          "category": "DevOps",
+          "priority": "High",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-08T08:45:00Z",
+          "updated_at": "2025-05-08T08:45:00Z",
+          "tags": ["logs", "server"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 20,
+          "title": "Birthday reminder",
+          "content": "Wish Rohit by 9 AM.",
+          "category": "Personal",
+          "priority": "High",
+          "status": "active",
+          "reminder_at": "2025-05-09T09:00:00Z",
+          "created_at": "2025-05-07T10:00:00Z",
+          "updated_at": "2025-05-07T10:00:00Z",
+          "tags": ["birthday"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 21,
+          "title": "App deployment checklist",
+          "content": "1. Pull latest build 2. Docker deploy 3. Run tests 4. Update docs",
+          "category": "Work",
+          "priority": "High",
+          "status": "completed",
+          "reminder_at": null,
+          "created_at": "2025-05-06T12:00:00Z",
+          "updated_at": "2025-05-06T12:30:00Z",
+          "tags": ["deployment"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 22,
+          "title": "Next JS vs Remix research",
+          "content": "Compare performance, SSR capabilities, and ecosystem.",
+          "category": "Research",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-07T13:00:00Z",
+          "updated_at": "2025-05-07T13:00:00Z",
+          "tags": ["frameworks"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 23,
+          "title": "Morning routine",
+          "content": "Wake up at 6:30, meditate, workout, journal.",
+          "category": "Lifestyle",
+          "priority": "Low",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-01T07:00:00Z",
+          "updated_at": "2025-05-01T07:00:00Z",
+          "tags": ["routine"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 24,
+          "title": "Install updates",
+          "content": "Update Node.js, Docker, and Postman.",
+          "category": "Maintenance",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": "2025-05-08T13:00:00Z",
+          "created_at": "2025-05-07T09:00:00Z",
+          "updated_at": "2025-05-07T09:00:00Z",
+          "tags": ["tools"],
+          "attachments": [],
+          "is_favorite": false
+        },
+        {
+          "id": 25,
+          "title": "Weekly team sync",
+          "content": "Prepare agenda: progress updates, blockers, next sprint goals.",
+          "category": "Work",
+          "priority": "High",
+          "status": "active",
+          "reminder_at": "2025-05-09T11:00:00Z",
+          "created_at": "2025-05-07T10:30:00Z",
+          "updated_at": "2025-05-07T10:30:00Z",
+          "tags": ["meeting", "sync"],
+          "attachments": [],
+          "is_favorite": true
+        },
+        {
+          "id": 26,
+          "title": "Plan vacation",
+          "content": "Research destinations, flights, and accommodations.",
+          "category": "Travel",
+          "priority": "Medium",
+          "status": "active",
+          "reminder_at": null,
+          "created_at": "2025-05-02T14:00:00Z",
+          "updated_at": "2025-05-02T14:00:00Z",
+          "tags": ["travel"],
+          "attachments": [],
+          "is_favorite": false
+        },
+      
 ];

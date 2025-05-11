@@ -1,52 +1,39 @@
 import Navbar from "../components/navbar/index";
-import TodoTable from "../components/TodoTable";
 import NotesTable from "../components/NotesTable";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Paper } from "@mui/material";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Container sx={{ mt: 4 }}>
-        <Box 
+      <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+        <Paper 
+          elevation={2} 
           sx={{ 
-            display: 'flex', 
-            gap: 4, 
-            justifyContent: 'center'
+            p: 3,
+            borderRadius: 2,
+            backgroundColor: 'background.paper'
           }}
         >
-          <Box 
+          <Typography 
+            variant="h4" 
             sx={{ 
-              width: 500,
-              height: 500,
-              p: 2,
-              border: '1px solid #e0e0e0',
-              borderRadius: 2,
-              overflow: 'auto'
+              mb: 3,
+              fontWeight: 600,
+              color: 'primary.main'
             }}
           >
-            <Typography variant="h5" gutterBottom>
-              Todo List
-            </Typography>
-            <TodoTable />
-          </Box>
-
-          <Box 
-            sx={{ 
-              width: 500,
-              height: 500,
-              p: 2,
-              border: '1px solid #e0e0e0',
-              borderRadius: 2,
-              overflow: 'auto'
-            }}
-          >
-            <Typography variant="h5" gutterBottom>
-              Notes
-            </Typography>
+            My Notes
+          </Typography>
+          
+          <Box sx={{ 
+            minHeight: 'calc(100vh - 250px)',
+            borderRadius: 1,
+            overflow: 'auto'
+          }}>
             <NotesTable />
           </Box>
-        </Box>
+        </Paper>
       </Container>
     </>
   );

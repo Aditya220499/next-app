@@ -1,10 +1,6 @@
-export interface Todo {
-    date: string;
-    title: string;
-    tasks: string[];
-  }
 
-export const todos :Todo[] = [
+
+export const todos = [
     {
       date: "2025-05-01",
       title: "Project Kickoff",
