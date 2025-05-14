@@ -111,7 +111,7 @@ export default function NotesTable() {
                       <EditIcon />
                     </IconButton>
                   </Tooltip> */}
-                  <Tooltip title="Toggle Favorite">
+                  {/* <Tooltip title="Toggle Favorite">
                     <IconButton
                       size="small"
                       color="warning"
@@ -119,7 +119,7 @@ export default function NotesTable() {
                     >
                       {note.is_favorite ? <StarIcon /> : <StarBorderIcon />}
                     </IconButton>
-                  </Tooltip>
+                  </Tooltip> */}
                 </Stack>
               </TableCell>
             </TableRow>
